@@ -9,14 +9,14 @@ import time as t
 from datetime import datetime
 
 #sec=int(input('>>'))
-
+sec=100
 with open('api_price.csv', 'a', newline='\n') as csvfile:
     fieldnames = ['time', 'exmo_bid', 'exmo_ask']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
 
-#while sec>0:
-while 1>0:
+while sec>0:
+#while 1>0:
     time = datetime.now()
 
     #Exmo API
@@ -32,4 +32,4 @@ while 1>0:
         writer.writerow({'time': time,'exmo_bid': exmo_bid, 'exmo_ask': exmo_ask})
     pp.pprint(exmo_ask) #you are printing a random one just to make sure something is coming in!
     t.sleep(1) # every second
-    #sec-=1  # take one second awayt
+    sec-=1  # take one second awayt
