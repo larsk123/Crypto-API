@@ -30,6 +30,6 @@ while sec>0:
     with open('api_price.csv', 'a', newline='\n') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writerow({'time': time,'exmo_bid': exmo_bid, 'exmo_ask': exmo_ask})
-    pp.pprint(exmo_ask) #you are printing a random one just to make sure something is coming in!
+    #pp.pprint(exmo_ask) #you are printing a random one just to make sure something is coming in!
     t.sleep(1) # every second
     sec-=1  # take one second awayt
